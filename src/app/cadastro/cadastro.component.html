@@ -1,0 +1,67 @@
+
+<div class="form-group">
+    <div class="row">               
+        <div class="col-md-6 col-xl-6 col-sm-6">
+            <label>Mês</label>
+            <input [attr.disabled]="disabled ? '' : null" type="text"  name="DAT_MES" class="form-control" (keyup)="onBind($event.target.value,$event.target.name)">    
+        </div>
+        <div class="col-md-6 col-xl-6 col-sm-6">
+            <label>Ano</label>
+            <input [attr.disabled]="disabled ? '' : null" type="text" name="DAT_ANO" class="form-control" (keyup)="onBind($event.target.value,$event.target.name)">
+        
+        </div>   
+      
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-xl-6 col-sm-6">
+            <label>Produto</label>
+            <form>
+                <select [attr.disabled]="disabled ? '' : null" class="form-control" name="COD_PRODUTO" (change)="onSelectedDropBoxProduto($event)" >
+                    <option *ngFor="let produto of produtos" value="{{produto.COD_PRODUTO}}">
+                    {{ produto.DES_PRODUTO }}
+                    </option>
+                </select>
+            </form>
+        </div>
+        <div class="col-md-6 col-xl-6 col-sm-6">
+            <label>Cosif</label>
+            <form>               
+                <select [attr.disabled]="disabled ? '' : null" class="form-control" name="COD_COSIF" (change)="onSelectedDropBox($event)"  >                        
+                    <option *ngFor="let item of produtoSelecionado.PRODUTOS_COSIF">
+                    {{ item.COD_COSIF }}
+                    </option>                        
+                </select>               
+            </form>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6 col-xl-6 col-sm-6">
+            <label>Valor</label>
+            <input [attr.disabled]="disabled ? '' : null" name="VAL_VALOR" class="form-control" (keyup)="onBind($event.target.value,$event.target.name)"/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-xl-6 col-sm-6">
+            <label>Descrição</label>
+            <textarea [attr.disabled]="disabled ? '' : null" name="DES_DESCRICAO" class="form-control" (keyup)="onBind($event.target.value,$event.target.name)"></textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-xl-6 col-sm-6">
+          <div style="float: right; margin-top:10px">
+            <button class="btn btn-primary" style="margin-left: 10px;">Limpar</button>
+            <button class="btn btn-primary" style="margin-left: 10px;" (click)=habilitarCampos()>Novo</button>
+            <button class="btn btn-primary" style="margin-left: 10px;" (click)="incluirDados()">Incluir</button>
+    
+          </div>          
+        </div>
+    </div>
+</div>
+
+
+
+

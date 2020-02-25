@@ -1,0 +1,28 @@
+
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Mês</th>
+                <th>Ano</th>
+                <th>Código do Produto</th>
+                <th>Descrição do Produto</th>
+                <th>Nr Lançamento</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let movimento of movimentos">
+                <td>{{movimento.mes}}</td>
+                <td>{{movimento.ano}}</td>
+                <td>{{movimento.codigo}}</td>
+                <td>{{movimento.descricaoProduto}}</td>
+                <td>{{movimento.lancamento}}</td>
+                <td>{{movimento.descriacao}}</td>
+                <td>{{movimento.valor}}</td>  
+             </tr>
+        </tbody>
+    </table>
+</div>
+
